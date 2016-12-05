@@ -1,5 +1,20 @@
 #!/bin/bash
 
+################################################
+#Written by: Brandon A. Dwyer
+#resetLogging.sh
+#
+#This script is the workhorse of the logging. It
+#will begin by stopping the startBytes.sh script,
+#deleting the current log files and deleting the
+#AWS Cloudwatch log groups and streams.
+#
+#It will then recreate the log group and streams,
+#restart the AWS logging service and start the
+#startBytes.sh script for packet and byte logging.
+#
+################################################
+
 /bin/bash /home/ec2-user/monitoring/stopBytes.sh
 
 /bin/bash /home/ec2-user/monitoring/resetFiles.sh

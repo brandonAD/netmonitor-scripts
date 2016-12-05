@@ -1,5 +1,25 @@
 #!/bin/bash
 
+################################################
+#Written by: Brandon A. Dwyer
+#script.sh
+#
+#The variables contained within are values
+#obtained from ipTables' counters. A grep was run
+#on a string that uniquely identifies the line
+#with the desired counters. Additional filtration
+#is used to single out the values using delimited
+#fields.
+#
+#Two variables for each User Defined Chain. One
+#for each counter value: Packets and Bytes
+#
+#After obtaining the figures, they are echoed to
+#a file with a date stamp. These are the files
+#that are ultimately sent to CloudWatch.
+#
+################################################
+
 sshInPACKETS=`iptables -nvx -L sshIn --line-numbers | grep "sshBytes" | tr ' ' ',' | tr -s ',' | cut -f 2 -d ','`
 
 sshInBYTES=`iptables -nvx -L sshIn --line-numbers | grep "sshBytes" | tr ' ' ',' | tr -s ',' | cut -f 3 -d ','`
@@ -48,6 +68,7 @@ totalPACKETS=`iptables -nvx -L allBytes --line-numbers | grep "\-\-" | tr ' ' ',
 
 totalBYTES=`iptables -nvx -L allBytes --line-numbers | grep "\-\-" | tr ' ' ',' | tr -s ',' | cut -f 3 -d ','`
 
+#These echo statements are the logged values being written to files
 echo $(date) " [INBOUND SSH] Inbound SSH Packets: " ${sshInPACKETS} "Inbound SSH Bytes: " ${sshInBYTES} >> /var/log/AWSsshIn
 echo $(date) " [OUTBOUND SSH] Outbound SSH Packets: " ${sshOutPACKETS} "Outbound SSH Bytes: " ${sshOutBYTES} >> /var/log/AWSsshOut
 echo $(date) " [INBOUND TCP] Inbound TCP Packets: " ${tcpInPACKETS} "Inbound TCP Bytes: " ${tcpInBYTES} >> /var/log/AWStcpIn
