@@ -2,6 +2,7 @@
 
 ################################################
 #Written by: Brandon A. Dwyer
+#Implemented by: Alexander J. Kaczmarek
 #startBytes.sh
 #
 #This script enables logging at a rate of 20 per

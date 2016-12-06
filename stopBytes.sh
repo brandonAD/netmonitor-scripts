@@ -2,6 +2,7 @@
 
 ################################################
 #Written by: Brandon A. Dwyer
+#Implemented by: Alexander J. Kaczmarek
 #stopBytes.sh
 #
 #This script terminates the logging started by

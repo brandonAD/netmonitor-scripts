@@ -2,6 +2,7 @@
 
 ################################################
 #Written by: Brandon A. Dwyer
+#Implemented by: Alexander J. Kaczmarek
 #resetFiles.sh
 #
 #This script deletes all log files created by

@@ -2,6 +2,7 @@
 
 ################################################
 #Written by: Brandon A. Dwyer
+#Implemented by: Alexander J. Kaczmarek
 #iptScript.sh
 #
 #This ipTables script is used only for logging

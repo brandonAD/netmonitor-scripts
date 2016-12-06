@@ -2,6 +2,7 @@
 
 ################################################
 #Written by: Brandon A. Dwyer
+#Implemented by: Alexander J. Kaczmarek
 #awsCWLogging.sh
 #
 #This script is designed to be run at boot time

@@ -2,6 +2,7 @@
 
 ################################################
 #Written by: Brandon A. Dwyer
+#Implemented by: Alexander J. Kaczmarek
 #resetLogging.sh
 #
 #This script is the workhorse of the logging. It
