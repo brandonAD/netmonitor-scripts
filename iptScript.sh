@@ -53,10 +53,10 @@ iptables -A allBytes -s 0.0.0.0/0 #match anything and everything
 #The inputBytes and outputBytes chains will allow tracking bytes by direction
 
 iptables -A inputBytes -p tcp -d $myIP -j tcpIn #tcp traffic is sent to the tcp chain
-iptables -A inputBytes -p udp -d $myIP -j udpIn #udp traffic is sent to the udp chaina
+iptables -A inputBytes -p udp -d $myIP -j udpIn #udp traffic is sent to the udp chain
 
 iptables -A outputBytes -p tcp -s $myIP -j tcpOut #tcp traffic is sent to the tcp chain
-iptables -A outputBytes -p udp -s $myIP -j udpOut #udp traffic is sent to the udp chaina
+iptables -A outputBytes -p udp -s $myIP -j udpOut #udp traffic is sent to the udp chain
 
 #Input and Output on a per-protocol basis
 
@@ -76,8 +76,8 @@ iptables -A udpOut -s 0.0.0.0/0 -j udpBytes #record packets/bytes and send to ud
 #Inbound and Outbound traffic
 
 iptables -A sshBytes -s 0.0.0.0/0  #record packets/bytes
-#Note that the sshBytes chain does not jump to the totalBytes chain. This 
-#is because the ssh traffic also matches the second tcpIn rule so it is 
+#Note that the sshBytes chain does not jump to the totalBytes chain. This
+#is because the ssh traffic also matches the second tcpIn rule so it is
 #already recorded once
 
 #All types of traffic will ultimately be recorded in the "allBytes" chain
